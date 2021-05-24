@@ -150,5 +150,13 @@ public class UserService implements UserDetailsService {
             throw new EmailAlreadyExistsException(client.getEmail());
         }
     }
+
+    public Optional<Client> fetchClientById(String clientId) {
+        return clientRepository.findById(clientId);
+    }
+
+    public Optional<Supplier> fetchSupplierById(String supplierId) {
+        return supplierRepository.findById(supplierId);
+    }
 }
 
